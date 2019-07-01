@@ -24,7 +24,7 @@ if [ -f "/usr/bin/$pip_command" ];then
         echo "Please execute the command: rm -rf /usr/bin/$pip_command";
         exit;
 fi
-yum install update
+yum update
 yum install -y zlib-devel wget gcc make
 wget https://www.python.org/ftp/python/$python_version/Python-$python_version.tgz
 tar -xvf Python-$python_version.tgz
