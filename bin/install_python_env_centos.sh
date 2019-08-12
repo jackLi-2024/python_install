@@ -26,12 +26,13 @@ if [ -f "/usr/bin/$pip_command" ];then
 fi
 yum update -y
 yum install -y zlib-devel wget gcc make
+yum install -y *openssl*
 wget https://www.python.org/ftp/python/$python_version/Python-$python_version.tgz
 tar -xvf Python-$python_version.tgz
 mkdir $python_dir
 mv Python-$python_version /usr/local/
 cd /usr/local/Python-$python_version
-./configure --prefix=$python_dir
+./configure --prefix=$python_dir --with-ssl
 make && make install
 ln -s $python_dir/bin/$python_file  /usr/bin/$version_command
 ln -s $python_dir/bin/$pip_file  /usr/bin/$pip_command
