@@ -25,6 +25,7 @@ if [ -f "/usr/bin/$pip_command" ];then
         exit;
 fi
 yum update -y
+yum install -y bzip*
 yum install -y zlib-devel wget gcc make
 yum install -y *openssl*
 wget https://www.python.org/ftp/python/$python_version/Python-$python_version.tgz
